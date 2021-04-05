@@ -10,8 +10,8 @@ const generateReadme = (response) =>
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
+* [Contributing](#Contributing)
+* [Features](#Features)
 * [Questions](#questions)
 
 # Installation
@@ -23,6 +23,13 @@ ${response.Installation}
  # License
  ${response.license}
 
+ # Features
+ ${response.Features}
+
+ # Contributing 
+ [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+ 
+ ${response.Contributing}
 `;
 
 inquirer
@@ -53,6 +60,17 @@ inquirer
       message: 'Describe how to install this project',
       name: 'Installation',
     },
+    {
+      type: 'input',
+      message: 'List what features your application has.',
+      name: 'Features',
+    },
+    {
+      type: 'input',
+      message: 'List what resposibilities contributors have.',
+      name: 'Contributing',
+    },
+
   ])
   .then((response) =>{
   const readmeContent = generateReadme(response);
