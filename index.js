@@ -2,9 +2,10 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateReadme = (response) =>
 `# Title ${response.title}
+![License](https://img.shields.io/badge/License-${response.license}-blue.svg "License Badge")\n 
 
- # Description
- ${response.description}
+ # Description\n 
+ ${response.description}\n
 
  # Table of Contents 
 * [Installation](#installation)
@@ -53,7 +54,7 @@ inquirer
       type: 'list',
       name: 'license',
       message: 'What kind of license should your project have?',
-      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+      choices: ['MIT', 'APACHE', 'GPL', 'BSD', 'None'],
     },
     {
       type: 'input',
