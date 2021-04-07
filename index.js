@@ -2,17 +2,20 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateReadme = (response) =>
 `# Title ${response.title}
-![License](https://img.shields.io/badge/License-${response.license}-blue.svg "License Badge")\n 
 
- # Description\n 
- ${response.description}\n
+#license\n
+![License](https://img.shields.io/badge/License-${response.license}-blue.svg "License Badge")\n
+
+ # Description  
+ ${response.description}
 
  # Table of Contents 
+* [License](#license)
 * [Installation](#installation)
 * [Usage](#usage)
-* [License](#license)
-* [Contributing](#Contributing)
 * [Features](#Features)
+* [Testing](#Testing)
+* [Contributing](#Contributing)
 * [Questions](#questions)
 
 # Installation
@@ -21,16 +24,21 @@ ${response.Installation}
  # Usage
  ${response.usage}
 
- # License
- ${response.license}
-
- # Features
+  # Features
  ${response.Features}
 
+ # Testing
+ ${response.Testing}
+ 
  # Contributing 
  [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
  
  ${response.Contributing}
+ 
+ # Questions
+ If you have any questions concerning this project please contact me from one of the following:
+ 
+${response.Questions}
 `;
 
 inquirer
@@ -42,12 +50,12 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Give a short description of your project',
+      message: 'Give a short description of your project.',
       name: 'description',
     },
     {
       type: 'input',
-      message: 'Describe how to use this project',
+      message: 'Describe how to use this project.',
       name: 'usage',
     },
     {
@@ -58,18 +66,29 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Describe how to install this project',
+      message: 'Describe how to install this project.',
       name: 'Installation',
     },
     {
       type: 'input',
-      message: 'List what features your application has.',
+      message: 'List what features your project has.',
       name: 'Features',
     },
     {
       type: 'input',
       message: 'List what resposibilities contributors have.',
       name: 'Contributing',
+    },
+
+    {
+      type: 'input',
+      message: 'List any procedures for testing your project.',
+      name: 'Testing',
+    },
+    {
+      type: 'input',
+      message: 'Please list contact info. email, URL for Linkedin profile, URL for Github profile.',
+      name: 'Questions',
     },
 
   ])
